@@ -1,4 +1,4 @@
-package com.gemini.chat.entity;
+package com.gemini.chat.vo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -19,28 +19,43 @@ import java.time.LocalDateTime;
  * @since 2020-04-03
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-@TableName("t_myfriend")
-public class TMyfriendsEntity implements Serializable {
+public class UserVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     /**
      * 主键
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    private String id;
     /**
      * 用户id
      */
-    private Long myUserId;
+    private String uid;
 
     /**
-     * 用户朋友id
+     * 用户名
      */
-    private Long myFriendUserId;
+    private String username;
 
-    private LocalDateTime createTime;
 
+    /**
+     * 用户头像
+     */
+    private String faceImage;
+
+    /**
+     * 用户头像大图
+     */
+    private String faceImageBig;
+
+    /**
+     * 昵称
+     */
+    private String nickname;
+
+    /**
+     * 二维码
+     */
+    private String qrcode;
 
 }
